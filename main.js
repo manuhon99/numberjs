@@ -2,42 +2,42 @@ function updateNumberInput(val) {
   document.getElementById('actual').value=val; 
   var number =   ["zero", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez", "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove"];
   var ten =  ["dez", "vinte", "trinta", "quarenta", "cinquenta", "sessenta", "setenta", "oitenta", "noventa", "cem"];
-  var centen =  ["cento", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seicentos", "setecentos", "oitocentos", "novecentos"];
+  var hundred =  ["cento", "duzentos", "trezentos", "quatrocentos", "quinhentos", "seicentos", "setecentos", "oitocentos", "novecentos"];
   input = parseInt(val);   
 
   if (input<20){
-    retorno = number[val];
+    resp = number[val];
   }
   else if (input<100) {
     var temp = val.toString().split('');
-    var primeiro_numero = temp[0];
-    var segundo_numero = temp[1];
-    retorno = ten[primeiro_numero-1];
-    if (segundo_numero > 0){
-      retorno += " e " + number[segundo_numero];
+    var fisrt = temp[0];
+    var second = temp[1];
+    resp = ten[fisrt-1];
+    if (second > 0){
+      resp += " e " + number[second];
     }
   }
   else if (input==100){
-    retorno = "cem"
+    resp = "cem"
   }
   else {
     var temp = val.toString().split('');
-    var primeiro_numero = temp[0];
-    var segundo_numero = temp[1];
-    var terceiro_numero = temp[2];
-    retorno = centen[primeiro_numero-1];
-    if (segundo_numero == 1){
-      retorno += " e " + number[parseInt(segundo_numero+terceiro_numero)];
+    var fisrt = temp[0];
+    var second = temp[1];
+    var third = temp[2];
+    resp = hundred[fisrt-1];
+    if (second == 1){
+      resp += " e " + number[parseInt(second+third)];
     }
-    else if (segundo_numero > 0){
-      retorno += " e " + ten[segundo_numero-1];
+    else if (second > 0){
+      resp += " e " + ten[second-1];
     }
-    if (terceiro_numero > 0 && segundo_numero != 1){
-      retorno += " e " + number[terceiro_numero];
+    if (third > 0 && second != 1){
+      resp += " e " + number[third];
     }
 
   }
-  document.getElementById('string').value=retorno; 
+  document.getElementById('string').value=resp; 
 
 }
 
