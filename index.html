@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Números por extenso</title>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <h1>Conversor para número por extenso<br><br><br></h1>
+  <div>
+    <div class="numbers">
+      <p><br>Escolha um número de 0 a 999:</p>
+      <input id="number" type="range" max="999" onchange="updateNumberInput(this.value)">
+      <p>Número escolhido:</p>
+      <input id="actual" type="text" disabled readonly>
+      <p>Número por extenso:</p>
+      <input id="string" type="text" disabled readonly>
+    </div>
+  </div>
+  <script defer src="./main.js"></script>
+</body>
+</html>
